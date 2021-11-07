@@ -78,3 +78,8 @@ color: white;
 .submit {
   margin-top: 10px;
 }
+
+.box {
+  width: 50px;
+  height: 50px;
+}

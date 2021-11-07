@@ -99,7 +99,7 @@ const NewUserForm = (props) => {
 
     
     return(
-    <div>
+    <div className="userform">
         <form onSubmit={ createUser } >
             {
                 hasBeenSubmitted ? 
@@ -107,34 +107,34 @@ const NewUserForm = (props) => {
                 <h3>Welcome, please submit the form.</h3> 
             }
             <div>
-                <label class="label"> First Name: </label>
-                <input class="input is-normal" type="text" onChange={ handleFirstName } />
+                <label className="label"> First Name: </label>
+                <input className="input is-normal" type="text" onChange={ handleFirstName } />
                 { firstNameError ? <p> {firstNameError} </p> : '' }
             </div>
             <div>
-                <label class="label"> Username: </label>
-                <input class="input is-normal" type="text" onChange={ handleLastName } />
+                <label className="label"> Username: </label>
+                <input className="input is-normal" type="text" onChange={ handleLastName } />
                 { lastNameError ? <p> {lastNameError} </p> : '' }
             </div>
             <div>
-                <label class="label">Email Address: </label> 
-                <input class="input is-normal" type="email" onChange={ handleEmail } />
+                <label className="label">Email Address: </label> 
+                <input className="input is-normal" type="email" onChange={ handleEmail } />
                 { emailError ? <p> {emailError} </p> : '' }
             </div>
             <div>
-                <label class="label">Password: </label>
-                <input class="input is-normal" type="password" onChange={ handlePassword } />
+                <label className="label">Password: </label>
+                <input className="input is-normal" type="password" onChange={ handlePassword } />
                 { passwordError ? <p> {passwordError} </p> : '' }
             </div>
             <div>
-                <label class="label">Confirm Password: </label>
-                <input class="input is-normal" type="password" onChange={ handleConfirmPassword } />
+                <label className="label">Confirm Password: </label>
+                <input className="input is-normal" type="password" onChange={ handleConfirmPassword } />
                 { confirmPasswordError ? <p> {confirmPasswordError} </p> : '' }
             </div>
             {
                 disableCreate ?
-                <input class="button" type="submit" value="Create User" disabled /> :
-                <input class="button" type="submit" value="Create User"/>
+                <input className="button submit" type="submit" value="Create User" disabled /> :
+                <input className="button submit" type="submit" value="Create User"/>
             }
         </form>
 
