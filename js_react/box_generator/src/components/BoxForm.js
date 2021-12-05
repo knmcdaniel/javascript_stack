@@ -14,17 +14,19 @@ const BoxForm = (props) => {
 
         setBoxColorArray([...boxColorArray, boxColor ]);
         
+        setBoxColor("");
+
         setHasBeenSubmitted( true );
 
     }
 
     const handleBoxColor = (e) => {
-        setBoxColor(e.target.value);
-        if(e.target.value.length < 1) {
+        if(e.target.value === "") {
             setBoxColorError("You must enter a color");
         } else {
             setBoxColorError("");
         }
+        setBoxColor(e.target.value);
     }
 
         return(  
@@ -38,7 +40,7 @@ const BoxForm = (props) => {
             
             <div>
                 <label className="label"> Color: </label>
-                <input className="input is-normal" type="text" onChange={ handleBoxColor } />
+                <input className="input is-normal" type="text" onChange={ handleBoxColor } value={boxColor} />
                 { boxColorError ? <p> {boxColorError} </p> : '' }
             </div>
             <input className="button submit" type="submit" value="Create Box" />
