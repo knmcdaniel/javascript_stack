@@ -5,4 +5,7 @@ const ProductSchema = new mongoose.Schema({
     desc: { type:String }
 }, {timestamps: true});
 
-module.exports = mongoose.model('Person', ProductSchema);
+const Product = mongoose.model('Product', ProductSchema);
+
+
+module.exports = Product;
