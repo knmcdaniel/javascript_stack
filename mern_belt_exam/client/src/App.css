@@ -1,0 +1,157 @@
+
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+
+html {
+  background-color: #282c34;
+}
+
+*  {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  margin: 25px;
+  margin: auto;
+  padding: 10px;
+  border-style: solid;
+  border-width: 2px;
+  width: 900px;
+  height: 700px;
+  background-color: white;
+  border-radius: 30px;
+}
+
+input .submit {
+  padding: 55px;
+  margin: 10px;
+}
+
+.messages {
+  color: red;
+  padding-left: 40px;
+}
+
+h1 {
+  padding-left: 40px;
+  padding-top: 5px;
+  font-size: 30px;
+}
+
+.content {
+  display:flex;
+}
+
+div .quarter{
+  width: 25%;
+  padding:20px;
+}
+
+div .half{
+  width: 50%;
+  padding:20px;
+}
+
+
+div .full{
+  width: 90%;
+  padding:20px;
+  display: inline-block;
+}
+
+
+.logout_button {
+  position: absolute;
+  margin-left: 700px;
+  margin-top: -70px;
+  text-decoration: underline;
+}
+
+.adopt_button{
+  position: absolute;
+  width: 130px;
+  margin-left: 680px;
+  margin-top: -200px;
+  background-color: red;
+  color: white;
+}
+
+.adopt_button:hover{
+  background-color: white;
+  color: red;
+}
+
+
+.petform_activity{
+  background-color: blue;
+  color: white;
+}
+
+.petform_activity:hover{
+  background-color: white;
+  color: blue;
+}
+
+.destroy {
+  background-color: red;
+}
+
+
+button:hover .redhoverbutton  {
+  background-color: red;
+  color: white;
+}
+
+.submit {
+  margin-top: 10px;
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  display: inline-block;
+}
+
+.overflow {
+  width: 50%;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+
+h4 {
+  padding-top: 10px;
+}
+
+td p{
+  color: black;
+  font-size: 18px;
+}
+
+th{
+  color: black;
+  font-size: 18px;
+}
+
+.spanlinks {
+  font-size: 18px;
+}
+
+.formborder {
+  border-style: solid;
+}
+
+.views_box {
+  border-style: solid;
+  margin-top: 20px;
+}
+
+.smaller {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
