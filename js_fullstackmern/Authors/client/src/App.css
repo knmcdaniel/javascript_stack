@@ -1,0 +1,102 @@
+
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+
+html {
+  background-color: #282c34;
+}
+
+*  {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  margin: 25px;
+  margin: auto;
+  padding: 10px;
+  border-style: solid;
+  border-width: 2px;
+  width: 900px;
+  height: 700px;
+  background-color: #7E7E7E;
+  border-radius: 30px;
+}
+
+input .submit {
+  padding: 55px;
+}
+
+.messages {
+  color: red;
+}
+
+h1 {
+  padding-left: 40px;
+  padding-top: 5px;
+  font-size: 30px;
+}
+
+.content {
+  display:flex;
+}
+
+div .half{
+  width: 50%;
+  padding:20px;
+}
+
+div .full{
+  width: 90%;
+  padding:20px;
+}
+
+
+.logout_button {
+  position: absolute;
+  padding-left: 700px;
+}
+
+.destroy {
+  background-color: red;
+}
+
+
+a:hover .red  {
+background-color: red;
+color: white;
+}
+
+.submit {
+  margin-top: 10px;
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  display: inline-block;
+}
+
+.overflow {
+  width: 50%;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+p {
+  color: white;
+}
+
+h4 {
+  padding-top: 10px;
+}
+
+td p{
+  color: black;
+  font-size: 30px;
+  text-align: center;
+}
