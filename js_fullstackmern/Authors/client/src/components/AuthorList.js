@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from '@reach/router'
+import { Link, navigate } from '@reach/router'
 import axios from 'axios';
 import DeleteButton from './DeleteButton';
 
-const AuthorList = (props) => {
+const AuthorList = () => {
 
     const [authors, setAuthors] = useState([]);
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/authors')
-            .then(res => setAuthors(res.data));
+            .then(res => {setAuthors(res.data)})
+            .catch(err => console.log(err));
     }, [])
 
     const removeFromDom = authorId => {
@@ -26,19 +27,17 @@ const AuthorList = (props) => {
                 </tr>
                 </thead>
                 <tbody>
-                    {props.authors.map((author, idx)=>{
-                        return ( 
-                                <tr key={idx}>
-                                    <td>
-                                        <p >{author.name}</p>
-                                    </td>
-                                    <td>
-                                    <Link to={"/author/" + author._id + "/edit"} ><button className="button submit">Edit</button></Link>
-                                    <DeleteButton authorId={author._id} successCallback={()=>removeFromDom(author._id)}/>
-                                    </td>
-                                </tr>
-                                )
-                    })}
+                    {authors.map((author, idx) => (
+                        <tr key={idx}>
+                            <td>
+                                <p>{author.authorName}</p>
+                            </td>
+                            <td>
+                            <Link to={"/author/" + author._id + "/edit"} ><button className="button submit">Edit</button></Link>
+                            <DeleteButton authorId={author._id} successCallback={()=>removeFromDom(author._id)}/>
+                            </td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>

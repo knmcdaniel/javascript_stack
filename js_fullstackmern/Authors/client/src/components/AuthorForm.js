@@ -3,16 +3,11 @@ import { Link } from "@reach/router";
 
 const AuthorForm = (props) => {
 
-    const { initialAuthorName, onSubmitProp } = props;
-    const [authorName, setAuthorName] = useState(initialAuthorName);
-
-    const onSubmitHandler = e => {
-        e.preventDefault();
-        onSubmitProp({authorName});
-    }
+    const { onSubmitHandler, initialAuthor } = props;
+    const [authorName, setAuthorName] = useState(initialAuthor);
 
     return (
-        <form onSubmit={onSubmitHandler}>
+        <form onSubmit={ e => onSubmitHandler (e, {authorName} )}>
             <p>
                 <label className="label">Author Name:</label><br/>
                 <input className="input is-normal" type="text" value={authorName} onChange = {(e)=>setAuthorName(e.target.value)}/>

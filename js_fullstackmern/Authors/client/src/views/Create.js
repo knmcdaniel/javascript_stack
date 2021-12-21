@@ -6,19 +6,37 @@ import axios from "axios";
 
 const Create = () => {
 
-    const [author, setAuthor] = useState([]);
+    const [errors, setErrors] = useState([]);
 
-    const createAuthor = author => {
+    const onSubmitHandler = (e, author) => {
+        e.preventDefault();
         axios.post('http://localhost:8000/api/author/create', author)
-            .then(res=> {setAuthor(res.data)});
+            .then(res=> {
+                console.log(res.data);
+                navigate("/");}
+                )
+            .catch((err) =>{
+                console.log(err);
+                const errorResponse = err.response.data.errors;
+                const errorArr = [];
+
+                for(const key of Object.keys(errorResponse)){
+                    errorArr.push(errorResponse[key].message);
+                }
+                setErrors(errorArr);
+            })
     }
 
 
     return (
         <div>
             <h1>Favorite Author</h1>
-            <h2> Add a Favorite Author</h2>
-            <AuthorForm onSubmitProp= {createAuthor} initialAuthorName="Name" />
+            {errors.map((error, idx) => {
+                return (
+                    <p key={idx}>{error}</p>
+                )
+            })}
+            <AuthorForm onSubmitHandler = {onSubmitHandler} initialAuthor= 'Name'/>
         </div>
     )
 }

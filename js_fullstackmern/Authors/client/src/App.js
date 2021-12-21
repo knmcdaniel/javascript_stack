@@ -10,7 +10,6 @@ function App() {
     <div className="App">
       <Router>
         <Main path="/" />
-        <Main path="/author/" />
         <Create path="/author/create"/>
         <Update path="/author/:id/edit"/>
       </Router>
